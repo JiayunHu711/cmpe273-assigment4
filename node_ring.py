@@ -1,6 +1,7 @@
 import hashlib
 
 from server_config import NODES
+import mmh3
 
 class NodeRing():
 

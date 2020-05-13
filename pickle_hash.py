@@ -32,6 +32,12 @@ def serialize_GET(id):
     })
     return envelope_bytes, id
 
+def serialize_DELETE(id):
+    envelope_bytes = pickle.dumps({
+        'operation': 'DELETE',
+        'id': id
+    })
+    return envelope_bytes, 'success'
 
 def test():
     data_bytes, hash_code = serialize_PUT({ 'user': 'Foo' })
