@@ -1,3 +1,5 @@
+Modified pickle_hash.py and node_ring.py
+
 # Consistent Hashing and RHW Hashing
 
 The distributed cache you implemented in the midterm is based on naive modula hashing to shard the data.
