@@ -1,5 +1,6 @@
 import pickle
 import hashlib
+import mmh3
 
 
 def serialize(object):
@@ -14,10 +15,14 @@ def hash_code_hex(data_bytes):
     hash_code = hashlib.md5(data_bytes)
     return hash_code.hexdigest()
 
+def hash_murmur(data_bytes):
+    return mmh3.hash(data_bytes)
+
+def weight(no)
 
 def serialize_PUT(object):
     object_bytes = pickle.dumps(object)
-    hash_code = hash_code_hex(object_bytes)
+    hash_code = hash_murmur(object_bytes)
     envelope_bytes = pickle.dumps({
         'operation': 'PUT',
         'id': hash_code,
